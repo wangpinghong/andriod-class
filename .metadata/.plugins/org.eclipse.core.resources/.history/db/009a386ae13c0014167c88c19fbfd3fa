@@ -8,7 +8,6 @@ import java.io.IOException;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,19 +17,15 @@ private ListView listview;
 
 protected void onCreate(Bundle savedInstanceState) {
 	// TODO Auto-generated method stub
-	listview=(ListView)findViewById(R.id.listView1);
+	listview=(ListView)findViewById(R.id.listview1);
 	
 	super.onCreate(savedInstanceState);
 	
 	String text=getIntent().getStringExtra("text");
+	textView.setText(text);
 	
 	writefile(text);
-	String data =readfile();
-	
-	ArrayAdapter <String> adapter= new ArrayAdapter<String>(this, 
-			android.R.layout.simple_list_item_1, data.split("\n"));
-	
-    listview.setAdapter(adapter);
+	textView.setText(readfile());
 }
 
 private void writefile (String text){
