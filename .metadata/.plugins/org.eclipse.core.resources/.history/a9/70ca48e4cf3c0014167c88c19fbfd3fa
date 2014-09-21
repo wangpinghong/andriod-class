@@ -1,0 +1,7 @@
+package com.example.simpleui;
+
+import android.view.View.OnCreateContextMenuListener;
+
+public class MessageActivity {
+OnCreateContextMenuListener
+}
